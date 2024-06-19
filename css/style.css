@@ -63,6 +63,13 @@ header > div {
 .container > aside {
     grid-area: aside;
     background-color: blanchedalmond;
+    padding-top: 1rem;
+
+    display: grid;
+    grid-template-columns: 0.8fr;
+    align-content: start;
+    justify-content: center;
+    gap: 3rem;
 }
 /*-------------------------------------------------------*/
 .container > main {
