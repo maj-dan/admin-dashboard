@@ -16,7 +16,7 @@ img {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr minmax(660px, 5fr);
     grid-template-rows: 1fr 5fr;
     grid-template-areas: 
     "aside header"
