@@ -16,7 +16,7 @@ img {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr minmax(660px, 5fr);
+    grid-template-columns: minmax(260px, 1fr) minmax(660px, 5fr);
     grid-template-rows: 1fr 5fr;
     grid-template-areas: 
     "aside header"
@@ -63,13 +63,44 @@ header > div {
 .container > aside {
     grid-area: aside;
     background-color: blanchedalmond;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 
     display: grid;
     grid-template-columns: 0.8fr;
     align-content: start;
     justify-content: center;
     gap: 3rem;
+}
+
+.branding {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+aside li {
+    font-size: 1.5rem;
+    list-style: none;
+    font-weight: bold;
+}
+
+aside li:nth-of-type(n + 2) {
+    margin-top: 0.5rem;
+}
+
+.branding:hover {
+    cursor: pointer;
+}
+
+aside li:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 /*-------------------------------------------------------*/
 /*main*/
