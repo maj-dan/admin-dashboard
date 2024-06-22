@@ -17,7 +17,7 @@ img {
 .container {
     display: grid;
     grid-template-columns: minmax(260px, 1fr) minmax(660px, 5fr);
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 176px 1fr;
     grid-template-areas: 
     "aside header"
     "aside main";
@@ -27,13 +27,13 @@ img {
 .container > header {
     grid-area: header;
     background-color: aqua;
-    padding: var(--header-items-gap) 5%;
+    padding: var(--header-items-gap) min(3rem, 5%);
 
     display: grid;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: var(--header-items-gap) 1rem;
     align-items: center;
-    row-gap: var(--header-items-gap);
 }
 
 header > div {
@@ -46,6 +46,23 @@ header > div {
     grid-template-columns: max-content 1fr;
 }
 
+.search > input {
+    appearance: none;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 6px 1rem;
+}
+
+.current-user > img {
+    height: 40px;
+}
+
+.current-user > h3 {
+    font-size: 1.2;
+    font-weight: bold;
+}
+
 .current-user {
     grid-template-columns: repeat(3, max-content);
     justify-self: end;
@@ -55,8 +72,29 @@ header > div {
     grid-template-columns: repeat(2, max-content);
 }
 
+.greeting > img {
+    height: 60px;
+}
+
+.greeting > div {
+    line-height: 1.5rem;
+}
+
 .header-actions {
-    grid-template-columns: repeat(3, 1fr);
+    justify-self: end;
+    width: min(300px, 100%);
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+    gap: 0;
+}
+
+.header-actions > button {
+    appearance: none;
+    border: none;
+    padding: 0.6rem 0;
+    font-size: 0.8rem;
+    border-radius: 1.1rem;
+    width: 76px;
 }
 /*-------------------------------------------------------*/
 /*sidebar*/
@@ -107,14 +145,21 @@ aside li:hover {
 .container > main {
     grid-area: main;
     background-color: brown;
+    padding: 1.5rem 1rem;
 
     display: grid;
     grid-template-columns: 1fr 300px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 323px 1fr;
     gap: 1rem;
     grid-template-areas: 
     "project announ"
     "project trend";
+}
+
+#projects > h3,
+#announcements > h3,
+#trending > h3 {
+    margin-bottom: 1rem;
 }
 
 #projects {
@@ -126,15 +171,37 @@ aside li:hover {
     grid-area: announ;
     background-color: chartreuse;
 
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
 }
 
 .announ-container {
     padding: 1rem;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
     background-color: white;
+}
+
+.announ-container > div {
+    max-height: min-content;
+}
+
+.announ-container > div:nth-child(-n + 2) {
+    border-bottom: 1px solid gray;
+}
+
+.announ-container > div > h4 {
+    margin-bottom: 0.2rem;
+}
+
+.announ-container > div > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #trending {
@@ -144,6 +211,8 @@ aside li:hover {
 
 .trend-container {
     background-color: white;
+    height: 301px;
+    padding: 1rem;
 
     display: grid;
     grid-template-rows: repeat(4, 1fr);
