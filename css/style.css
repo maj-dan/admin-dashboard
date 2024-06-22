@@ -57,6 +57,22 @@ header > div {
     align-items: center;
 }
 
+.search button,
+.current-user button,
+.project-card button{
+    background: none;
+    border: none;
+}
+
+.search button > svg,
+.current-user button > svg,
+.project-card button > svg {
+    height: 30px;
+    path {
+        fill: var(--cyan-950);
+    }
+}
+
 .search {
     grid-template-columns: max-content 1fr;
 }
