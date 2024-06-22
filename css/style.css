@@ -159,12 +159,49 @@ aside li:hover {
 #projects > h3,
 #announcements > h3,
 #trending > h3 {
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
 #projects {
     grid-area: project;
     background-color: blue;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    height: 220px;
+    padding: 1rem;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem min-content 1fr;
+}
+
+.project-card > h4 {
+    font-size: 1.2rem;
+    align-self: end;
+}
+
+.project-card .btns-container {
+    justify-self: end;
+    align-self: end;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-card > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #announcements {
@@ -224,16 +261,4 @@ aside li:hover {
     gap: 0.5rem;
     align-items: center;
 }
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.project-card {
-    background-color: white;
-}
-
-
 /*-------------------------------------------------------*/
