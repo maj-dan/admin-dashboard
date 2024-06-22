@@ -1,3 +1,27 @@
+@font-face {
+    font-family: pacifico;
+    src: url(../fonts/pacifico-webfont.woff2),
+        url(../fonts/pacifico-webfont.woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url(../fonts/quicksand-regular-webfont.woff2),
+        url(../fonts/quicksand-regular-webfont.woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url(../fonts/quicksand-bold-webfont.woff2),
+        url(../fonts/quicksand-bold-webfont.woff);
+    font-style: normal;
+    font-weight: bold;
+}
+
 :root {
     font-size: 16px;
     --header-items-gap: 1.5rem;
@@ -49,6 +73,8 @@ img {
     grid-template-rows: min-content 1fr;
     gap: var(--header-items-gap) 1rem;
     align-items: center;
+
+    font-family: pacifico, sans-serif;
 }
 
 header > div {
@@ -73,6 +99,19 @@ header > div {
     }
 }
 
+.search button:hover,
+.current-user button:hover,
+.project-card button:hover,
+.search button:active,
+.current-user button:active,
+.project-card button:active {
+    svg {
+        path {
+            fill: var(--cyan-600);
+        }
+    }
+}
+
 .search {
     grid-template-columns: max-content 1fr;
 }
@@ -85,6 +124,12 @@ header > div {
     padding: 6px 1rem;
     background-color: var(--cyan-200);
     color: var(--cyan-950);
+}
+
+.search > input:hover,
+.search > input:focus {
+    outline: var(--cyan-400) solid 1px;
+    background-color: var(--cyan-100);
 }
 
 .current-user > img {
@@ -125,12 +170,17 @@ header > div {
     appearance: none;
     border: none;
     padding: 0.6rem 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     border-radius: 1.1rem;
     width: 76px;
     background-color: var(--cyan-400);
     color: var(--cyan-50);
+    font-family: quicksand, sans-serif;
     font-weight: bold;
+}
+
+.header-actions > button:hover {
+    background-color: var(--cyan-500);
 }
 /*-------------------------------------------------------*/
 /*sidebar*/
@@ -145,6 +195,9 @@ header > div {
     align-content: start;
     justify-content: center;
     gap: 3rem;
+
+    font-family: pacifico, sans-serif;
+    line-height: 1.1;
 }
 
 .branding {
@@ -204,6 +257,8 @@ aside li:hover {
     "project trend";
 
     color: var(--cyan-950);
+    font-family: quicksand, sans-serif;
+    line-height: 1.2;
 }
 
 #projects > h3,
@@ -317,5 +372,10 @@ main p {
     grid-template-columns: min-content 1fr;
     gap: 0.5rem;
     align-items: center;
+}
+
+.trend-container h5::before {
+    content: "@";
+    color: var(--cyan-950);
 }
 /*-------------------------------------------------------*/
