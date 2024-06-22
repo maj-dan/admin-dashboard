@@ -163,6 +163,15 @@ aside li {
     font-size: 1.5rem;
     list-style: none;
     font-weight: bold;
+
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: end;
+    gap: 1rem;
+}
+
+aside li > svg > path {
+    fill: var(--cyan-50);
 }
 
 aside li:nth-of-type(n + 2) {
@@ -176,6 +185,9 @@ aside li:nth-of-type(n + 2) {
 aside li:hover {
     text-decoration: underline;
     cursor: pointer;
+    svg > path {
+        fill: var(--cyan-200);
+    }
 }
 /*-------------------------------------------------------*/
 /*main*/
