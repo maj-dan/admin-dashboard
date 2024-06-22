@@ -1,6 +1,17 @@
 :root {
     font-size: 16px;
     --header-items-gap: 1.5rem;
+    --cyan-50: #ecfeff;
+    --cyan-100: #cffafe;
+    --cyan-200: #a5f3fc;
+    --cyan-300: #67e8f9;
+    --cyan-400: #22d3ee;
+    --cyan-500: #06b6d4;
+    --cyan-600: #0891b2;
+    --cyan-700: #0e7490;
+    --cyan-800: #155e75;
+    --cyan-900: #164e63;
+    --cyan-950: #083344;
 }
 
 * {
@@ -22,12 +33,16 @@ img {
     "aside header"
     "aside main";
     min-height: 100vh;
+
+    background-color: var(--cyan-200);
 }
 /*header*/
 .container > header {
     grid-area: header;
-    background-color: aqua;
+    background-color: var(--cyan-50);
+    color: var(--cyan-950);
     padding: var(--header-items-gap) min(3rem, 5%);
+    box-shadow: 2px 2px 4px var(--cyan-300);
 
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -52,6 +67,8 @@ header > div {
     border-radius: 1rem;
     font-size: 1rem;
     padding: 6px 1rem;
+    background-color: var(--cyan-200);
+    color: var(--cyan-950);
 }
 
 .current-user > img {
@@ -95,12 +112,16 @@ header > div {
     font-size: 0.8rem;
     border-radius: 1.1rem;
     width: 76px;
+    background-color: var(--cyan-400);
+    color: var(--cyan-50);
+    font-weight: bold;
 }
 /*-------------------------------------------------------*/
 /*sidebar*/
 .container > aside {
     grid-area: aside;
-    background-color: blanchedalmond;
+    background-color: var(--cyan-500);
+    color: var(--cyan-50);
     padding-top: 0.5rem;
 
     display: grid;
@@ -144,7 +165,6 @@ aside li:hover {
 /*main*/
 .container > main {
     grid-area: main;
-    background-color: brown;
     padding: 1.5rem 1rem;
 
     display: grid;
@@ -154,6 +174,8 @@ aside li:hover {
     grid-template-areas: 
     "project announ"
     "project trend";
+
+    color: var(--cyan-950);
 }
 
 #projects > h3,
@@ -163,9 +185,20 @@ aside li:hover {
     margin-bottom: 1rem;
 }
 
+.project-card,
+.announ-container,
+.trend-container {
+    background-color: var(--cyan-50);
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px var(--cyan-300);
+}
+
+main p {
+    color: var(--cyan-900);
+}
+
 #projects {
     grid-area: project;
-    background-color: blue;
 }
 
 .projects-container {
@@ -177,7 +210,7 @@ aside li:hover {
 .project-card {
     height: 220px;
     padding: 1rem;
-    background-color: white;
+    border-left: 0.5rem solid var(--cyan-950);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2rem min-content 1fr;
@@ -206,7 +239,6 @@ aside li:hover {
 
 #announcements {
     grid-area: announ;
-    background-color: chartreuse;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -218,7 +250,6 @@ aside li:hover {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 0.5rem;
-    background-color: white;
 }
 
 .announ-container > div {
@@ -226,7 +257,7 @@ aside li:hover {
 }
 
 .announ-container > div:nth-child(-n + 2) {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--cyan-200);
 }
 
 .announ-container > div > h4 {
@@ -243,11 +274,9 @@ aside li:hover {
 
 #trending {
     grid-area: trend;
-    background-color: cornflowerblue;
 }
 
 .trend-container {
-    background-color: white;
     height: 301px;
     padding: 1rem;
 
